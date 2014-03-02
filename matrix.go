@@ -151,9 +151,10 @@ func main() {
     _ = <-ready
   }
   fmt.Print("\033[?25h")
-  fmt.Print("\033107m\03330m\033[?47l\0338")
+  fmt.Print("\033[?47l\0338")
   fmt.Printf("\033[%d;%dH", lines, 1)
-  fmt.Printf("\033[30mNumber of lines %3d\n", lines)
+  fmt.Print("\033[39m\033[49m")
+  fmt.Printf("Number of lines %3d\n", lines)
   fmt.Printf("Number of cols  %3d\n", cols)
   ppid := os.Getppid()
   fmt.Printf("get_ppid %d\n", ppid)
